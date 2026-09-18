@@ -60,7 +60,7 @@ const AccordionList = () => {
             />
           </button>
           <p
-            className={`text-purple-6000 overflow-hidden transition-all duration-200 ${isOpenAccordions[index] === true ? "max-h-fit" : "max-h-0"}`}
+            className={`text-purple-6000 overflow-hidden transition-all duration-400 ${isOpenAccordions[index] === true ? "max-h-[400px]" : "max-h-0"}`}
           >
             {accordion.description}
           </p>
