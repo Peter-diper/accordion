@@ -42,16 +42,21 @@ const AccordionList = () => {
   return (
     <div className="flex flex-col gap-[24px]">
       {ACCORDION_ITEMS.map((accordion, index) => (
-        <article
+        <div
+          aria-label="accordion"
           className={`flex flex-col gap-[24px] ${index + 1 !== ACCORDION_ITEMS.length ? "border-b border-purple-1000 pb-[24px]" : ""}`}
         >
           <button
             onClick={() => {
               handleClick(index);
             }}
+            aria-label="accordion open and close button"
             className="flex justify-between gap-2 items-start"
           >
-            <h3 className={`text-purple-9000 text-left font-bold  `}>
+            <h3
+              aria-label="accordion title"
+              className={`text-purple-9000 text-left font-bold  `}
+            >
               {accordion.title}
             </h3>
             <img
@@ -60,11 +65,12 @@ const AccordionList = () => {
             />
           </button>
           <p
+            aria-label="accordion description"
             className={`text-purple-6000 overflow-hidden transition-all duration-400 ${isOpenAccordions[index] === true ? "max-h-[400px]" : "max-h-0"}`}
           >
             {accordion.description}
           </p>
-        </article>
+        </div>
       ))}
     </div>
   );
